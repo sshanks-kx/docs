@@ -1075,7 +1075,7 @@ I ymd(year, month, day)
 ```
 Tags: `c.o`
 
-Encode a year/month/day as a q date, e.g. `0==ymd(2000, 1, 1)`
+Encode a year/month/day as a q date, e.g. `0==ymd(2000, 1, 1)`. `month` must be within `1` and `12`, and `day` must be within `1` and the number of days in the given month.
 
 :fontawesome-regular-hand-point-right:
 [`dj` – date to number](#dj-date-to-number)
