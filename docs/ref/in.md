@@ -80,7 +80,7 @@ p5| cam   blue  12     paris
 ```
 
 
-## {: style="color:red"} Mixed argument types
+## Mixed argument types
 
 Optimized support for atom or 1-list `y` allows a wider input type mix.
 
