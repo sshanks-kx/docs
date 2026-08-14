@@ -14,15 +14,9 @@ _You can run kdb+ on Linux, macOS, or Windows._
 
 ## :fontawesome-solid-download: Step 1: Download
 
-Commercial versions of kdb+ are available to customers from [downloads.kx.com](https://downloads.kx.com). Credentials are available from the customer's [Designated Contacts](licensing.md#obtain-a-license-key-file).
+Commercial versions of kdb+ are available to customers from the [KX Downloads Portal](https://portal.dl.kx.com/assets/raw/kdb+/). Credentials are available from the customer's [Designated Contacts](licensing.md#obtain-a-license-key-file).
 
-Requires a 64-bit interpreter and a `k4.lic` or `kc.lic` license-key file 
-
-OR
-
-a 32-bit interpreter.
-
-!!! warning "32-bit applications will not run in macOS 10.15+ (Catalina and later)"
+Requires a 64-bit interpreter and a `k4.lic` or `kc.lic` license-key file.
 
 !!! tip "Internal distribution at customer sites"
 
@@ -33,7 +27,7 @@ a 32-bit interpreter.
 
 !!! info "Platforms and versions"
 
-    The names of the ZIPs denote the platform: `l64.zip` – 64-bit Linux; `w32.zip` – 32-bit Windows, etc. m64 contains a universal binary suitable for both Intel and Apple Silicon Macs. l64 contains the Linux x86 build, with l64arm containing the Linux build suitable for ARM processors.
+    The names of the ZIPs denote the platform: `l64.zip` – 64-bit Linux; `w64.zip` – 64-bit Windows, etc. m64 contains a universal binary suitable for both Intel and Apple Silicon Macs. l64 contains the Linux x86 build, with l64arm containing the Linux build suitable for ARM processors.
 
     Numerical release versions of the form 3.5, or 4.0 are production code. Versions of kdb+ with a trailing `t` in the name such as `3.7t` are test versions and are neither intended nor supported for production use.
 
@@ -73,22 +67,9 @@ Unzip the downloaded ZIP to produce a folder `q` in your install location.
 
 === ":fontawesome-brands-windows: Windows (PowerShell)"
 
-    ```poqwershell
+    ```powershell
     Expand-Archive w64.zip -DestinationPath C:\q
     ```
-
-??? note "How to run 32-bit kdb+ on 64-bit Linux"
-
-    Use the `uname -m` command to determine whether your machine is using the 32-bit or 64-bit Linux distribution.
-
-    If the result is
-
-    -   `i686` or `i386` or similar, you are running a **32-bit** Linux distribution
-    -   `x86_64`, you are running a **64-bit** Linux distribution
-
-    To install 32-bit kdb+ on a 64-bit Linux distribution, you need a 32-bit library. Use your usual [package manager](https://en.wikipedia.org/wiki/Package_manager "Wikipedia") to install i686 or i386: for example, `sudo apt-get install libc6-i386`.
-
-    :fontawesome-solid-globe: [How to run 32-bit app in Ubuntu 64-bit?](https://askubuntu.com/questions/454253/how-to-run-32-bit-app-in-ubuntu-64-bit)
 
 
 ## :fontawesome-solid-certificate: Step 3: Install the license file
@@ -123,8 +104,6 @@ Your `QHOME` directory will then contain:
     │   └── q
     └── q.k
     ```
-
-(32-bit versions have `32` in the folder name instead of `64`.)
 
 kdb+ looks for a license file in `QHOME`. To keep your license file elsewhere, set its path in environment variable `QLIC`.
 
@@ -183,10 +162,6 @@ q)
 [License errors](../basics/errors.md#license-errors),
 [Licensing](licensing.md)
 
-??? warning "License files and 32-bit kdb+"
-
-    32-bit kdb+ does not require a license file to run, but if it finds one at launch it will signal a license error if the license is not valid.
-
 Try your first expression.
 
 ```q
@@ -232,8 +207,6 @@ The `QLIC` environment variable tells kdb+ where to find [a license key file](li
 
     1.  `setx QHOME "C:\q"`
     1.  `setx PATH "%PATH%;C:\q\w64"`
-
-(In the above, substitute `32` for `64` if you are installing 32-bit kdb+.)
 
 Test the new command. Open a new command shell and type `q`.
 
