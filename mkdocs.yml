@@ -19,6 +19,9 @@ extra_javascript:
   - scripts/strip-repl-prompts.js # Removes q), >>>, and ... prompts from copied code blocks (keeps prompts visible in docs)
   - scripts/init_kapa_widget.js    
 
+hooks:
+  - tools/markdown_versions.py
+
 markdown_extensions:
   - abbr
   - admonition
